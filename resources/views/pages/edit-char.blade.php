@@ -350,7 +350,7 @@ $(document).ready(function(){
 
           </div>
 
-          <form method="POST" action="/dndlaravel/dndlaravel/public/characters/commit_edit/{{ $character->char_id }}" name="CharForm" id="editChar">
+          <form method="POST" action="/characters/commit_edit/{{ $character->char_id }}" name="CharForm" id="editChar">
 
           {{ csrf_field() }} <!-- This submits a token request, it's a Laravel security feature -->
             <div id="char-create-part-1">
