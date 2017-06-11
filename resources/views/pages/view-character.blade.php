@@ -423,7 +423,7 @@
                           
 
                           <div class="col-xs-6">
-                            <a href="/dndlaravel/dndlaravel/public/characters/edit/{{ $character->char_id }}">
+                            <a href="/characters/edit/{{ $character->char_id }}">
                             <button type="button" class="btn btn-info">Edit Character</button></a>
                           </div>
 
@@ -445,7 +445,7 @@
                                 $deleteCharName = "{{ $character->character_name }}";
 
                                 $('#charNameDel').html($deleteCharName);
-                                $("#charDelID").attr("href", "./characters/delete/" + $deleteCharId);
+                                $("#charDelID").attr("href", "/characters/delete/" + $deleteCharId);
                                 console.log($deleteCharName );
                           });
                             });

@@ -559,11 +559,11 @@ console.log("Nothing to flash");
 
                         <div class="button-container col-lg-12 text-center btn-group">
                           <div class="col-xs-4">
-                            <a href="/dndlaravel/dndlaravel/public/characters/{{ $character->char_id }}"><button type="button" class="btn btn-success">View Character</button></a>
+                            <a href="/characters/{{ $character->char_id }}"><button type="button" class="btn btn-success">View Character</button></a>
                           </div>
 
                           <div class="col-xs-4">
-                            <a href="/dndlaravel/dndlaravel/public/characters/edit/{{ $character->char_id }}">
+                            <a href="/characters/edit/{{ $character->char_id }}">
                             <button type="button" class="btn btn-info">Edit Character</button></a>
                           </div>
 
@@ -585,7 +585,7 @@ console.log("Nothing to flash");
                                 $deleteCharName = "{{ $character->character_name }}";
 
                                 $('#charNameDel').html($deleteCharName);
-                                $("#charDelID").attr("href", "./characters/delete/" + $deleteCharId);
+                                $("#charDelID").attr("href", "/characters/delete/" + $deleteCharId);
                                 console.log($deleteCharName );
                           });
                             });

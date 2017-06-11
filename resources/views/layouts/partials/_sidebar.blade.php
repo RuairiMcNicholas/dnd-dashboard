@@ -28,19 +28,19 @@
                     
 
                     <li class="dropdown {{Request::path() == 'characters' ? 'active' : ''}} {{Request::path() == 'create-character' ? 'active' : ''}}">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="/dndlaravel/dndlaravel/public/characters"><i class="ra ra-helmet ra-fw"></i> Characters</a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="/characters"><i class="ra ra-helmet ra-fw"></i> Characters</a>
 
                          <ul class="dropdown-menu">
                             <li>
-                                <a href="/dndlaravel/dndlaravel/public/characters" class="dropdown-item" ><i style="padding-right: 3px;" class="ra ra-helmet ra-fw"></i>List</a>
+                                <a href="/characters" class="dropdown-item" ><i style="padding-right: 3px;" class="ra ra-helmet ra-fw"></i>List</a>
                             </li>
 
                             <li>
-                                <a href="/dndlaravel/dndlaravel/public/create-character" class="dropdown-item" ><i style="padding-right: 3px;" class="ra ra-health ra-fw"></i>Create</a>
+                                <a href="/create-character" class="dropdown-item" ><i style="padding-right: 3px;" class="ra ra-health ra-fw"></i>Create</a>
                             </li>
 
                             <li>
-                                <a href="/dndlaravel/dndlaravel/public/deleted-characters" class="dropdown-item" ><i style="padding-right: 3px;" class="ra ra-skull ra-fw"></i>View Deleted</a>
+                                <a href="/deleted-characters" class="dropdown-item" ><i style="padding-right: 3px;" class="ra ra-skull ra-fw"></i>View Deleted</a>
                             </li>
  
                         
@@ -52,7 +52,7 @@
 
                     
                     <li class="{{Request::path() == 'campaigns' ? 'active' : ''}}">
-                        <a href="./campaigns"><i class="ra ra-scroll-unfurled ra-fw"></i> Campaigns</a>
+                        <a href="/campaigns"><i class="ra ra-scroll-unfurled ra-fw"></i> Campaigns</a>
                     </li>
 
                 
@@ -72,7 +72,7 @@
 
                 <ul class="nav navbar-nav side-nav">
                     <li class="{{Request::path() == 'campaigns' ? 'active' : ''}}">
-                        <a href="./dashboard"><i class="fa fa-fw fa-dashboard"></i>Login/Register</a>
+                        <a href="/dashboard"><i class="fa fa-fw fa-dashboard"></i>Login/Register</a>
                     </li>
                 @endif
 
