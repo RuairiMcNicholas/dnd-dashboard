@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -12,26 +12,26 @@
     <title>D&D Dashboard V1.0</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="/dndlaravel/dndlaravel/public/assets/css/bootstrap.min.css?v=<?=time();?>" rel="stylesheet">
+    <link href="/assets/css/bootstrap.min.css?v=<?=time();?>" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/dndlaravel/dndlaravel/public/assets/css/sb-admin.css?v=<?=time();?>" rel="stylesheet">
+    <link href="/assets/css/sb-admin.css?v=<?=time();?>" rel="stylesheet">
 
 
 
     <!-- Custom Fonts -->
-    <link href="/dndlaravel/dndlaravel/public/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <!-- RPG Awesome Icons -->
-    <link rel="stylesheet" href="/dndlaravel/dndlaravel/public/assets/Rpg-Awesome-master/css/rpg-awesome.css">
+    <link rel="stylesheet" href="/assets/Rpg-Awesome-master/css/rpg-awesome.css">
 
     <!-- jQuery -->
-    <script type="text/javascript" src="/dndlaravel/dndlaravel/public/assets/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
 
     <!-- Dropdown menu -->
-    <script type="text/javascript" src="/dndlaravel/dndlaravel/public/assets/js/bootstrap-dropdownhover.min.js"></script>
-    <script type="text/javascript" src="/dndlaravel/dndlaravel/public/assets/css/bootstrap-dropdownhover.min.css"></script>
-    <script type="text/javascript" src="/dndlaravel/dndlaravel/public/assets/css/animate.min.css"></script>
+    <script type="text/javascript" src="/assets/js/bootstrap-dropdownhover.min.js"></script>
+    <script type="text/javascript" src="/assets/css/bootstrap-dropdownhover.min.css"></script>
+    <script type="text/javascript" src="/assets/css/animate.min.css"></script>
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

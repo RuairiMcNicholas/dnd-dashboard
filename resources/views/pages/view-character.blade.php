@@ -11,27 +11,14 @@
 </style>
 
 <div id="page-wrapper">
-
-            <div class="container-fluid">
-
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-
-
-                    @if ($character->player_id != \Auth::user()->id)
-
-                        <p>Could not find character.</p>
-
-
-                
-                @else
-
-
-                        <h1 class="page-header">
-                            View Character:
-                        </h1>
-                 
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        @if ($character->player_id != \Auth::user()->id)
+        <p>Could not find character.</p>
+        @else
+        <h1 class="page-header">View Character:</h1>
+                  
                     <!-- STRENGTH -->
                         @php($strVal = $character->Strength)
                         
