@@ -259,7 +259,7 @@
                             <p><b>Background: </b>{{ $character->Background }}</p>
                           </div>
                           <div class="col-lg-6" style="padding-top: 0px; height:120px;">
-                            <p><b>Campaign: </b>{{ $campaign_name }}</p>
+
                             <p><b>Level: </b>{{ $character->Level }}</p>
                             <p><b>Alignment: </b>{{ $character->Alignment }}</p>
                           </div>

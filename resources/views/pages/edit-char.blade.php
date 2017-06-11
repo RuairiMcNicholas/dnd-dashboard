@@ -106,7 +106,7 @@ $(document).ready(function(){
     <div class="row">
       <div class="col-lg-12">
 
-      <!-- This Laravel @if will only allow you to view & edit a character if it belongs to the logged in user -->
+      <!-- This Laravel if will only allow you to view & edit a character if it belongs to the logged in user -->
         @if ($character->player_id != \Auth::user()->id)
 
             <p>Could not find character.</p>
