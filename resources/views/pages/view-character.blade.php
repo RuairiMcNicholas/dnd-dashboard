@@ -512,5 +512,25 @@
             
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="background-color: #d43f3a">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel" style="color: #ffffff"><b>Confirm deletion</b></h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete <b><span id="charNameDel"></span></b>?</p><br>
+        <p>(Characters can be recovered from the Deleted Characters section)</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Cancel</button>
+        <a id="charDelID" href=""><button type="button" class="btn btn-danger">Delete</button></a>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 @endsection
