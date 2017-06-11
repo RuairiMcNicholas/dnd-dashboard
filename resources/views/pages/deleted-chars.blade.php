@@ -117,7 +117,7 @@ so it's useful for showing temporary alerts. -->
           <p><b>Class: </b>{{ $deletedChar->Class }}</p>
           <p><b>Race: </b>{{ $deletedChar->Race }}</p>
           <p><b>Level: </b>{{ $deletedChar->Level }}</p>
-          <a href="/dndlaravel/dndlaravel/public/characters/restore/{{ $deletedChar->char_id }}">
+          <a href="/characters/restore/{{ $deletedChar->char_id }}">
           <button 
           type="button" class="btn btn-warning">Restore Character</button></a>
           
