@@ -22,7 +22,7 @@
             @if (Auth::check())
                 <ul class="nav navbar-nav side-nav " data-hover="dropdown">
                     <li class="{{Request::path() == 'dashboard' ? 'active' : ''}}">
-                        <a href="./dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href="/dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
 
                     
