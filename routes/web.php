@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'CharacterController@count');
+Route::get('/', 'WelcomeController@welcome');
 
 
 Route::get('/home', 'HomeController@index')->name('home');
