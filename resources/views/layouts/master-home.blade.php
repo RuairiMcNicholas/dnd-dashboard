@@ -41,7 +41,7 @@
 
         #page-wrapper {
             padding: 10px;
-            height: 1000px;
+            height: 100%;
         }
 
 

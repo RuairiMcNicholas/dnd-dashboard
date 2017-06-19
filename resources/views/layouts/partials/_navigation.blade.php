@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html" style="color:#ffffff;">D&D Dashboard</a> <i style="color:#ffffff; line-height: 1.7;" class="ra ra-dragon ra-2x"></i>
+                <a class="navbar-brand" href="http://dnddashboard.com/" style="color:#ffffff;">D&D Dashboard</a> <i style="color:#ffffff; line-height: 1.7;" class="ra ra-dragon ra-2x"></i>
             </div>
 
             @if (Auth::check())
