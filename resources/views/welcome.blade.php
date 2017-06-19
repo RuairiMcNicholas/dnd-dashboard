@@ -38,7 +38,7 @@
             background-size: cover;
         }
         .page-header {
-            font-size: 500%;
+            font-size: 400% !important;
         }
     }
 
