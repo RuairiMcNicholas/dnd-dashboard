@@ -7,7 +7,7 @@
     .welcomeText {
         background-color: rgba(50, 50, 50, 0.8);
 
-        border-radius: 20px;
+        border-radius: 5px;
         border-width: 4px;
         border-color: rgba(50, 50, 50, 0.8);
 
@@ -23,6 +23,10 @@
 
 
 
+    }
+
+    .dnd-footer .col-lg-12 {
+        bottom: initial !important;
     }
 
     @media screen and (min-device-width: 1200px) {
@@ -66,11 +70,22 @@
                             </div>
 
                         </div>
+                        @if (Auth::check())
+                        <div class="text-centre" style="text-align:center; ">
+                            <a href="{{ url('/dashboard') }}"><button type="button" class="btn btn-primary" style="font-size: 160%;"><i class="fa fa-fw fa-sign-in"></i> Go to Dashboard</button></a>                     
+                        </div>
+ 
+
+                        @else
+
                         <div class="text-centre" style="text-align:center; ">
                             <a href="{{ url('/login') }}"><button type="button" class="btn btn-primary" style="font-size: 160%;"><i class="fa fa-fw fa-sign-in"></i> Login</button></a>
                             <a href="{{ url('/register') }}"><button type="button" class="btn btn-primary" style="font-size: 160%;"><i class="fa fa-fw fa-sign-out"></i> Register</button></a>
                         
                         </div>
+                       
+
+                        @endif
 
                         <div style="margin-top: 70px;">
                             <h1 class="text-center" style="color:#ffffff;">

@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div class="container">
+<div class="container" style="background-color: #555555;">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-8 col-md-offset-2" style="margin-top: 20px;">
             <div class="panel panel-default">
                 <div class="panel-heading">Register</div>
                 <div class="panel-body">

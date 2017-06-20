@@ -6,6 +6,8 @@
 
 /* Global Styles */
 
+@import url("custom.css");
+
 body {
     margin-top: 100px;
     background-color: #222;
@@ -227,22 +229,3 @@ ul.alert-dropdown {
 }
 
 
-/* CUSTOM */
-
-/*CSS for dropdown menus in the sidebar */
-
-.dropdown-item {
-    color: #000000 ;
-}
-
-.dropdown-item i {
-    color: #000000 ;
-}
-
-.dropdown i:hover {
-    color: #ffffff !important;
-}
-
-.dropdown a:hover {
-    color: #ffffff !important;
-}

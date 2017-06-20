@@ -1,0 +1,28 @@
+/* DnD Dashboard Custom CSS */
+
+/*CSS for dropdown menus in the sidebar */
+
+.dropdown-item {
+    color: #000000 ;
+}
+
+.dropdown-item i {
+    color: #000000 ;
+}
+
+.dropdown i:hover {
+    color: #ffffff !important;
+}
+
+.dropdown a:hover {
+    color: #ffffff !important;
+}
+
+
+/*Stops the sidebar from covering the footer on the Dashboard - needs-improving- */
+
+@media (min-width: 768px) {
+	.side-nav {
+		height: 80% !important;
+	}
+}
