@@ -1,4 +1,4 @@
-    <footer>
+    <footer style="display: none;">
 		<div class="container-fluid dnd-footer">
 	    	<div class="row">
 	    		<div class="col-lg-12" style="background-color: rgba(70,70,70, 0.5); color:#ffffff; padding-top: 6px; position: absolute; bottom: 0;">
