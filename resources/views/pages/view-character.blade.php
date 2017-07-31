@@ -433,7 +433,7 @@
 
                           <div class="col-xs-12" style="padding-right: 0px; padding-top: 20px; padding-left: 0px;">
                             <a href="/characters/print/{{ $character->char_id }}">
-                            <button type="button" class="btn btn-success" id="printCharButton{{ $character->char_print_id }}">Print Character Sheet</button></a>
+                            <button type="button" class="btn btn-success">Print Character Sheet</button></a>
                           </div>
 
                         </div>
