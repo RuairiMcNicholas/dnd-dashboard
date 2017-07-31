@@ -147,7 +147,7 @@ class CharacterController extends Controller
         
 
             // Check for errors
-            if (!$pdf->saveAs('filled.pdf')) {
+            if (!$pdf->saveAs('Character Sheet - '.$character->character_name.'.pdf')) {
                 $error = $pdf->getError();
                 echo('<h2>'.$error.'</h2>');
             }
