@@ -136,7 +136,10 @@ class CharacterController extends Controller
             
 
             // Fill form with data array
-            $pdf = new Pdf('/var/www/html/dnd-dashboard/dnd-dashboard/public/pdfs');
+            $pdf = new Pdf('C:\xampp-new\htdocs\dndlaravel\git\dnd-dashboard\public\pdfs\form-fillable-char-sheet.pdf', [
+            'command' => 'C:\Program Files (x86)\PDFtk Server\bin\pdftk.exe',
+            'useExec' => true,  // May help on Windows systems if execution fails
+]);
             $pdf->fillForm(array(
                     'CharacterName'=>$character->character_name,
                     
