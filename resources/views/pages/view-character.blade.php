@@ -422,13 +422,18 @@
                         <div class="button-container col-lg-12 text-center">
                           
 
-                          <div class="col-xs-6">
-                            <a href="/characters/edit/{{ $character->char_id }}">
+                          <div class="col-xs-6" style="padding-right: 0px; padding-left: 0px; width: 30% !important">
+                            <a href="/characters/edit/{{ $character->char_id }}" style="float:left;">
                             <button type="button" class="btn btn-info">Edit Character</button></a>
                           </div>
 
-                          <div class="col-xs-6" style="padding-right: 0px;"  data-toggle="modal" data-target="#myModal">
-                            <button type="button" class="btn btn-danger" id="deleteCharButton{{ $character->char_id }}">Delete Character</button>
+                          <div class="col-xs-6" style="float: right; margin-right: 0px; padding-right: 0px;"  data-toggle="modal" data-target="#myModal">
+                            <button style="float: right;" type="button" class="btn btn-danger" id="deleteCharButton{{ $character->char_id }}">Delete Character</button>
+                          </div>
+
+                          <div class="col-xs-12" style="padding-right: 0px; padding-top: 20px; padding-left: 0px;">
+                            <a href="/characters/print/{{ $character->char_id }}">
+                            <button type="button" class="btn btn-success" id="printCharButton{{ $character->char_print_id }}">Print Character Sheet</button></a>
                           </div>
 
                         </div>

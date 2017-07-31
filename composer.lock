@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "105df89641b40608b97d0012e0e7d343",
+    "content-hash": "dde5c08876680074ca15df1681dbd53a",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -605,6 +605,123 @@
                 "storage"
             ],
             "time": "2017-04-28T10:15:08+00:00"
+        },
+        {
+            "name": "mikehaertl/php-pdftk",
+            "version": "0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mikehaertl/php-pdftk.git",
+                "reference": "0ceaaefc17e8e2d765f565f94f521b9431602cbe"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mikehaertl/php-pdftk/zipball/0ceaaefc17e8e2d765f565f94f521b9431602cbe",
+                "reference": "0ceaaefc17e8e2d765f565f94f521b9431602cbe",
+                "shasum": ""
+            },
+            "require": {
+                "mikehaertl/php-shellcommand": "^1.0.2",
+                "mikehaertl/php-tmpfile": "^1.0.0",
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "mikehaertl/pdftk2-precise-amd64": "pdftk 2 binary for Ubuntu 12.04 LTS (amd64)"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mikehaertl\\pdftk\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Haertl",
+                    "email": "haertl.mike@gmail.com"
+                }
+            ],
+            "description": "A PDF conversion and form utility based on pdftk.",
+            "keywords": [
+                "pdf",
+                "pdftk"
+            ],
+            "time": "2017-04-04T15:11:51+00:00"
+        },
+        {
+            "name": "mikehaertl/php-shellcommand",
+            "version": "1.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mikehaertl/php-shellcommand.git",
+                "reference": "35a81f344bd771b0b1c1ae3f4dc986dddfd234b9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mikehaertl/php-shellcommand/zipball/35a81f344bd771b0b1c1ae3f4dc986dddfd234b9",
+                "reference": "35a81f344bd771b0b1c1ae3f4dc986dddfd234b9",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mikehaertl\\shellcommand\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Härtl",
+                    "email": "haertl.mike@gmail.com"
+                }
+            ],
+            "description": "An object oriented interface to shell commands",
+            "keywords": [
+                "shell"
+            ],
+            "time": "2017-06-30T06:21:01+00:00"
+        },
+        {
+            "name": "mikehaertl/php-tmpfile",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mikehaertl/php-tmpfile.git",
+                "reference": "b1b013cc29a8ee0423994b286d22e3aed6640d4e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mikehaertl/php-tmpfile/zipball/b1b013cc29a8ee0423994b286d22e3aed6640d4e",
+                "reference": "b1b013cc29a8ee0423994b286d22e3aed6640d4e",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "mikehaertl\\tmp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Härtl",
+                    "email": "haertl.mike@gmail.com"
+                }
+            ],
+            "description": "A convenience class for temporary files",
+            "keywords": [
+                "files"
+            ],
+            "time": "2016-07-07T05:59:42+00:00"
         },
         {
             "name": "monolog/monolog",

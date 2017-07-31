@@ -49,6 +49,16 @@ padding-left: 0px;
 
 </style>
 
+@if (Auth::guest())
+    
+    <?php echo '<script type="text/javascript">
+           window.location = "http://www.google.com/"
+           console.log("Redirect firing!")
+      </script>';
+       ?>
+
+@endif
+
 
 @if (Session::has('flash_delete_success'))
 
@@ -89,6 +99,8 @@ else {
 </script>
 
 @elseif (Session::has('flash_restore_success'))
+
+@elseif (Session::has('flash_edit_success'))
 
 
 @else 
@@ -143,6 +155,7 @@ else {
 
 
 @elseif (Session::has('flash_delete_success'))
+@elseif (Session::has('flash_edit_success'))
 
 @else 
 <script type="text/javascript">
@@ -156,6 +169,54 @@ console.log("Nothing to flash");
 
 @endif
 
+
+
+@if (Session::has('flash_edit_success'))
+
+<script type="text/javascript">
+  
+$(window).on('load', function(){ 
+
+
+window.editSuccess = {{ Session::get("flash_edit_success") }};
+window.editCharName = "{{ Session::get("flash_edit_name") }}";
+
+
+})
+
+</script>
+
+<script type="text/javascript">
+  
+$(window).on('load', function(){ 
+
+$('#charDelWarningButt').show();
+
+
+
+if (window.editSuccess == 1) {
+  console.log("Character '" + window.editedCharName + "' was edited successfully.");
+  $('#charDelWarningSpan').html("Character '" + window.editCharName + "' was edited successfully.")
+}
+
+else {
+  console.log("Error: Character does not exist, or does not belong to you.");
+  $('#charDelWarningSpan').html("<b>Error:</b> Character does not exist, or does not belong to you.")
+}
+
+
+})
+
+</script>
+
+
+
+
+@elseif (Session::has('flash_restore_success'))
+@elseif (Session::has('flash_delete_success'))
+
+
+@endif
 
 
 
@@ -190,7 +251,8 @@ console.log("Nothing to flash");
                             </div>
 
 
-                       		</div>
+                       		  </div>
+
                        	</div>
 
 
@@ -432,146 +494,146 @@ console.log("Nothing to flash");
 
 	   
                         <div class="well col-lg-5 char-box-main" style="margin-right: 20px; margin-right: 20px; padding-left: 10px; padding-right: 10px; padding-top: 0px;">
-                        <h2>{{ $character->character_name }}</h2>
-                        <p><b>Class: </b>{{ $character->Class }}</p>
-                        <p><b>Race: </b>{{ $character->Race }}</p>
-                        <p><b>Level: </b>{{ $character->Level }}</p>
+                          <h2>{{ $character->character_name }}</h2>
+                          <p><b>Class: </b>{{ $character->Class }}</p>
+                          <p><b>Race: </b>{{ $character->Race }}</p>
+                          <p><b>Level: </b>{{ $character->Level }}</p>
 
-                        <div class="charStatContainer">
-                          <!-- STRENGTH -->
-                          <div class="col-lg-6 charStat">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <div class="row">
-                                        <div class="col-xs-12 statBox">
-                                            <i class="ra ra-muscle-up ra-3x" style="display:inline;"></i>
-                                            <div class="huge charMod">{{$strMod}}</div>
-                                        </div>
-                                        <div class="col-xs-12 text-right">
-                                            
-                                            <div><p><b>Strength: </b>{{ $strVal }}</p></div>
-                                        </div>
-                                    </div>
-                                </div>
-                          
-                            </div>
-                          </div>
-
-                      	<!-- DEXTERITY -->
-                      	 <div class="col-lg-6 charStat right">
-                          <div class="panel panel-primary">
-                              <div class="panel-heading">
-                                  <div class="row">
-                                      <div class="col-xs-12 statBox">
-                                          <i class="ra ra-player-dodge ra-3x" style="display:inline;"></i>
-                                          <div class="huge charMod">{{ $dexMod }}</div>
-                                      </div>
-                                      <div class="col-xs-12 text-right">
-                                          
-                                          <div><p><b>Dexterity: </b>{{ $character->Dexterity }}</p></div>
+                          <div class="charStatContainer">
+                            <!-- STRENGTH -->
+                            <div class="col-lg-6 charStat">
+                              <div class="panel panel-primary">
+                                  <div class="panel-heading">
+                                      <div class="row">
+                                          <div class="col-xs-12 statBox">
+                                              <i class="ra ra-muscle-up ra-3x" style="display:inline;"></i>
+                                              <div class="huge charMod">{{$strMod}}</div>
+                                          </div>
+                                          <div class="col-xs-12 text-right">
+                                              
+                                              <div><p><b>Strength: </b>{{ $strVal }}</p></div>
+                                          </div>
                                       </div>
                                   </div>
+                            
                               </div>
-                        
-                           </div>
-                         </div>
+                            </div>
 
-                      	<!-- CONSTITUTION -->	
-                        	<div class="col-lg-6 charStat">
-                            	<div class="panel panel-primary">
-                                	<div class="panel-heading">
-    	                                <div class="row">
-    	                                    <div class="col-xs-12 statBox">
-    	                                        <i class="ra ra-hearts ra-3x" style="display:inline;"></i>
-    	                                        <div class="huge charMod">{{ $conMod }}</div>
-    	                                    </div>
-    	                                    <div class="col-xs-12 text-right">
-    	                                        
-    	                                        <div><p><b>Constitution: </b>{{ $character->Constitution }}</p></div>
-    	                                    </div>
-    	                                </div>
-                                	</div>
-                          
-                           		</div>
-                       		</div>
-
-                     		<!-- INTELLIGENCE -->	
-                      	<div class="col-lg-6 charStat right">
-                          	<div class="panel panel-primary">
-                              	<div class="panel-heading">
-  	                                <div class="row">
-  	                                    <div class="col-xs-12 statBox">
-  	                                        <i class="ra ra-book ra-3x" style="display:inline;"></i>
-  	                                        <div class="huge charMod">{{ $intMod }}</div>
-  	                                    </div>
-  	                                    <div class="col-xs-12 text-right">
-  	                                        
-  	                                        <div><p><b>Intelligence: </b>{{ $character->Intelligence }}</p></div>
-  	                                    </div>
-  	                                </div>
-                              	</div>
-                        
-                         		</div>
-                     		</div>
-
-
-
-                     		<!-- WISDOM -->	
-                      	<div class="col-lg-6 charStat ">
-                          	<div class="panel panel-primary">
-                              	<div class="panel-heading">
-  	                                <div class="row">
-  	                                    <div class="col-xs-12 statBox">
-  	                                        <i class="ra ra-ball ra-3x" style="display:inline;"></i>
-  	                                        <div class="huge charMod">{{ $wisMod }}</div>
-  	                                    </div>
-  	                                    <div class="col-xs-12 text-right">
-  	                                        
-  	                                        <div><p><b>Wisdom: </b>{{ $character->Wisdom }}</p></div>
-  	                                    </div>
-  	                                </div>
-                              	</div>
-                        
-                         		</div>
-                     		</div>
-
-
-
-                     		<!-- CHARISMA -->	
-                      	<div class="col-lg-6 charStat right">
-                          	<div class="panel panel-primary">
-                              	<div class="panel-heading">
-  	                                <div class="row">
-  	                                    <div class="col-xs-12 statBox">
-  	                                        <i class="ra ra-speech-bubble ra-3x" style="display:inline;"></i>
-  	                                        <div class="huge charMod">{{ $chaMod }}</div>
-  	                                    </div>
-  	                                    <div class="col-xs-12 text-right">
-  	                                        
-  	                                        <div><p><b>Charisma: </b>{{ $character->Charisma }}</p></div>
+                          	<!-- DEXTERITY -->
+                          	<div class="col-lg-6 charStat right">
+                              <div class="panel panel-primary">
+                                  <div class="panel-heading">
+                                      <div class="row">
+                                          <div class="col-xs-12 statBox">
+                                              <i class="ra ra-player-dodge ra-3x" style="display:inline;"></i>
+                                              <div class="huge charMod">{{ $dexMod }}</div>
+                                          </div>
+                                          <div class="col-xs-12 text-right">
                                               
-  	                                    </div>
-  	                                </div>
-                              	</div> 
-                        
+                                              <div><p><b>Dexterity: </b>{{ $character->Dexterity }}</p></div>
+                                          </div>
+                                      </div>
+                                  </div>
+                            
+                               </div>
+                            </div>
+
+                        	 <!-- CONSTITUTION -->	
+                          	<div class="col-lg-6 charStat">
+                              	<div class="panel panel-primary">
+                                  	<div class="panel-heading">
+      	                                <div class="row">
+      	                                    <div class="col-xs-12 statBox">
+      	                                        <i class="ra ra-hearts ra-3x" style="display:inline;"></i>
+      	                                        <div class="huge charMod">{{ $conMod }}</div>
+      	                                    </div>
+      	                                    <div class="col-xs-12 text-right">
+      	                                        
+      	                                        <div><p><b>Constitution: </b>{{ $character->Constitution }}</p></div>
+      	                                    </div>
+      	                                </div>
+                                  	</div>
+                            
+                             		</div>
                          		</div>
-                     		</div>
 
-                        <div class="button-container col-lg-12 text-center btn-group">
-                          <div class="col-xs-4">
-                            <a href="/characters/{{ $character->char_id }}"><button type="button" class="btn btn-success">View Character</button></a>
-                          </div>
+                         		<!-- INTELLIGENCE -->	
+                          	<div class="col-lg-6 charStat right">
+                              	<div class="panel panel-primary">
+                                  	<div class="panel-heading">
+      	                                <div class="row">
+      	                                    <div class="col-xs-12 statBox">
+      	                                        <i class="ra ra-book ra-3x" style="display:inline;"></i>
+      	                                        <div class="huge charMod">{{ $intMod }}</div>
+      	                                    </div>
+      	                                    <div class="col-xs-12 text-right">
+      	                                        
+      	                                        <div><p><b>Intelligence: </b>{{ $character->Intelligence }}</p></div>
+      	                                    </div>
+      	                                </div>
+                                  	</div>
+                            
+                             		</div>
+                         		</div>
 
-                          <div class="col-xs-4">
-                            <a href="/characters/edit/{{ $character->char_id }}">
-                            <button type="button" class="btn btn-info">Edit Character</button></a>
-                          </div>
 
-                          <div class="col-xs-4" style="padding-right: 0px;"  data-toggle="modal" data-target="#myModal">
-                            <button type="button" class="btn btn-danger" id="deleteCharButton{{ $character->char_id }}">Delete Character</button>
-                          </div>
 
-                        </div>
+                         		<!-- WISDOM -->	
+                          	<div class="col-lg-6 charStat ">
+                              	<div class="panel panel-primary">
+                                  	<div class="panel-heading">
+      	                                <div class="row">
+      	                                    <div class="col-xs-12 statBox">
+      	                                        <i class="ra ra-ball ra-3x" style="display:inline;"></i>
+      	                                        <div class="huge charMod">{{ $wisMod }}</div>
+      	                                    </div>
+      	                                    <div class="col-xs-12 text-right">
+      	                                        
+      	                                        <div><p><b>Wisdom: </b>{{ $character->Wisdom }}</p></div>
+      	                                    </div>
+      	                                </div>
+                                  	</div>
+                            
+                             		</div>
+                         		</div>
+
+
+
+                         		<!-- CHARISMA -->	
+                          	<div class="col-lg-6 charStat right">
+                              	<div class="panel panel-primary">
+                                  	<div class="panel-heading">
+      	                                <div class="row">
+      	                                    <div class="col-xs-12 statBox">
+      	                                        <i class="ra ra-speech-bubble ra-3x" style="display:inline;"></i>
+      	                                        <div class="huge charMod">{{ $chaMod }}</div>
+      	                                    </div>
+      	                                    <div class="col-xs-12 text-right">
+      	                                        
+      	                                        <div><p><b>Charisma: </b>{{ $character->Charisma }}</p></div>
+                                                  
+      	                                    </div>
+      	                                </div>
+                                  	</div> 
+                            
+                             		</div>
+                         		</div>
+
+                            <div class="button-container col-lg-12 text-center btn-group">
+                              <div class="col-xs-4">
+                                <a href="/characters/{{ $character->char_id }}"><button type="button" class="btn btn-success">View Character</button></a>
+                              </div>
+
+                              <div class="col-xs-4">
+                                <a href="/characters/edit/{{ $character->char_id }}">
+                                <button type="button" class="btn btn-info">Edit Character</button></a>
+                              </div>
+
+                              <div class="col-xs-4" style="padding-right: 0px;"  data-toggle="modal" data-target="#myModal">
+                                <button type="button" class="btn btn-danger" id="deleteCharButton{{ $character->char_id }}">Delete Character</button>
+                              </div>
+
+                            </div>
 
                         </div>
 
@@ -600,10 +662,11 @@ console.log("Nothing to flash");
                     </div>
                 </div>
 
-
-
             </div>
-</div>
+          </div>
+    
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -624,7 +687,6 @@ console.log("Nothing to flash");
     </div>
   </div>
 </div>
-
 
 
 @endsection

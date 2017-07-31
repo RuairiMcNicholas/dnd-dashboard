@@ -15,7 +15,9 @@
     <link href="/assets/css/bootstrap.min.css?v=<?=time();?>" rel="stylesheet">
 
     <!-- Custom CSS -->
+    <link href="/assets/css/custom.css" rel="stylesheet" type="text/css">
     <link href="/assets/css/sb-admin.css?v=<?=time();?>" rel="stylesheet">
+    
 
 
 

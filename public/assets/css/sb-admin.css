@@ -6,7 +6,9 @@
 
 /* Global Styles */
 
-@import url("custom.css");
+
+@import 'custom.css';
+
 
 body {
     margin-top: 100px;

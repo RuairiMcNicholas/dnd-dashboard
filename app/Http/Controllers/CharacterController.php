@@ -11,6 +11,8 @@ use Illuminate\Database\Eloquent\Model;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+use mikehaertl\pdftk\Pdf;
+
 
 class CharacterController extends Controller
 {
@@ -102,13 +104,72 @@ class CharacterController extends Controller
 
     public function index()
     {
-    	
+    
+    if (Auth::check()) {
+
 	$characters = Character::userChars();
 
 	return view('pages.characters', compact('characters') );
 
+    }
+
+    else {
+        return view('pages.must-login');
+    }
+
 
     }
+
+
+    public function printCharacter($char_print_id) 
+
+        {
+
+
+        $printCharacterUserID = \DB::table('characters')->where('char_id', $char_print_id)->value('player_id');
+        $pCUID = (int)$printCharacterUserID;
+        $userID = Auth::user()->id;
+        $character = \DB::table('characters')->where('char_id', $char_print_id)->first();
+
+        if ($userID == $pCUID) {
+
+            
+
+            // Fill form with data array
+            $pdf = new Pdf('C:\xampp-new\htdocs\dndlaravel\git\dnd-dashboard\public\pdfs\form-fillable-char-sheet.pdf', [
+            'command' => 'C:\Program Files (x86)\PDFtk Server\bin\pdftk.exe',
+            'useExec' => true,  // May help on Windows systems if execution fails
+]);
+            $pdf->fillForm(array(
+                    'CharacterName'=>$character->character_name,
+                    
+                       ))
+            ->needAppearances()
+            ->send('Character Sheet - '.$character->character_name.'.pdf');
+
+        
+
+            // Check for errors
+            if (!$pdf->saveAs('filled.pdf')) {
+                $error = $pdf->getError();
+                echo('<h2>'.$error.'</h2>');
+            }
+
+            //return redirect('/dashboard');
+
+        }
+
+        else {
+
+            return view('pages.must-login');
+
+        }
+
+
+
+    }
+
+
 
 
     public function count()
@@ -183,6 +244,14 @@ class CharacterController extends Controller
 		$new_character->Proficiency = 2;
         } else if ($levelVar >= 8) {
         $new_character->Proficiency = 3;
+        } else if ($levelVar >= 12) {
+        $new_character->Proficiency = 4;
+        } else if ($levelVar >= 16) {
+        $new_character->Proficiency = 5;
+        } else if ($levelVar >= 20) {
+        $new_character->Proficiency = 6;
+        } else if ($levelVar <= 21 {
+        $new_character->Proficiency = 6;
         }
 
 
@@ -382,7 +451,18 @@ class CharacterController extends Controller
 
         $edited_character->update();
 
-        return redirect('./characters');
+        $editSuccess = 1;
+
+        $editCharName = $edited_character->character_name;
+
+
+        \Session::flash('flash_edit_success', $editSuccess);
+        \Session::flash('flash_edit_name', $editCharName );
+
+        return redirect('/characters')->with('editSuccess', $editSuccess); 
+
+
+
 
 
         } else {

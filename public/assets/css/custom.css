@@ -19,10 +19,43 @@
 }
 
 
+/* Sidebar Styling */
+
+.side-nav>li>ul>li>a {
+	display: block;
+	padding: 10px 15px 10px 38px;
+	text-decoration: none	;
+	color: #000000 ;
+}
+
+.side-nav>li>ul>li>a:hover i {
+    color: #ffffff !important;;
+}
+
+.dropdown i:hover {
+    color: #ffffff !important;
+}
+
 /*Stops the sidebar from covering the footer on the Dashboard - needs-improving- */
 
 @media (min-width: 768px) {
 	.side-nav {
-		height: 80% !important;
+		height: 40% !important;
 	}
 }
+
+/* End Sidebar Styling */
+
+
+/* User Menu Dropdown Styling */
+
+.dropdown-menu a:hover {
+	background-color: #000000 !important;
+}
+
+.dropdown-menu li:hover {
+	background-color: #000000 !important;
+}
+
+
+/* End User Menu Dropdown Styling */

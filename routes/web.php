@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/must-login', function () {
+    return view('pages.must-login');
+});
+
 Route::get('/', 'WelcomeController@welcome');
 
 
@@ -77,6 +81,9 @@ Route::get('/characters/delete/{char_delete_id}', 'CharacterController@deleteCha
 Route::get('/characters/restore/{char_restore_id}', 'CharacterController@restoreCharacter');
 Route::get('/characters/pdelete/{char_pDelete_id}', 'CharacterController@pDeleteCharacter');
 Route::get('/characters/edit/{char_id}', 'CharacterController@editCharacter');
+Route::get('/characters/print/{char_print_id}', 'CharacterController@printCharacter');
+
+
 Route::post('/characters/commit_edit/{char_id}', 'CharacterController@commitEdit');
 
 
