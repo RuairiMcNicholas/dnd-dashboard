@@ -136,7 +136,7 @@ class CharacterController extends Controller
             
 
             // Fill form with data array
-            $pdf = new Pdf('/var/www/html/dnd-dashboard/dnd-dashboard/public/pdfs');
+            $pdf = new Pdf('/var/www/html/dnd-dashboard/dnd-dashboard/public/pdfs/form-fillable-char-sheet.pdf');
             $pdf->fillForm(array(
                     'CharacterName'=>$character->character_name,
                     
