@@ -582,14 +582,93 @@ langVar = [];
           <div class="col-lg-4">
             <div class="form-group">
               <label for="hit-dice">Hit Dice:</label>
-              <input type="text" class="form-control" id="hit-dice" placeholder="" name="hit-dice" required>
+
+              <select id="hit-dice-num" class="form-control" style="width: 15%; display: inline-block;" name="hitDice1" required>
+                <?php 
+
+                $i = 0;
+
+                for ($i=1; $i < 13; $i++) {
+                  echo("<option value='".$i."'>".$i."</option>");
+                }
+
+                ?>
+              </select>
+
+              <p style="display: inline-block;"> d</p>
+
+              <select id="hit-dice-die" class="form-control" style="width: 15%; display: inline-block;" name="hitDice2" required>
+                <option value="4">4</option>
+                <option value="6">6</option>
+                <option value="8">8</option>
+                <option value="10">10</option>
+                <option value="12">12</option>
+                <option value="20">20</option> n
+              </select>
+
             </div>
           </div>
 
           <div class="col-lg-4">
             <div class="form-group">
               <label for="saving-throws">Saving Throws:</label>
-              <input type="text" class="form-control" id="saving-throws" placeholder="" name="saving-throws" required>
+              <select id="saving-throws" class="form-control" required>
+                <option value="Strength">Strength</option>
+                <option value="Dexterity">Dexterity</option>
+                <option value="Constitution">Constitution</option>
+                <option value="Intelligence">Intelligence</option>
+                <option value="Wisdom">Wisdom</option>
+                <option value="Charisma">Charisma</option>  
+              </select>
+            </div>
+          </div>
+          
+
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label>Weapon, Tools & Other Proficiencies:</label>
+              <textarea rows="5" cols="10" class="form-control char-text-area" id="wep-tool-profs" placeholder="" name="wep-tool-profs" required> 
+              </textarea>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label>Features & Traits:</label>
+              <textarea rows="5" cols="10" class="form-control char-text-area" id="features-traits" placeholder="" name="features-traits" required> 
+              </textarea>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label>Personality Traits:</label>
+              <textarea rows="5" cols="10" class="form-control char-text-area" id="personality-traits" placeholder="" name="personality-traits" required> 
+              </textarea>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label>Ideals:</label>
+              <textarea rows="5" cols="10" class="form-control char-text-area" id="ideals" placeholder="" name="ideals" required> 
+              </textarea>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label>Bonds:</label>
+              <textarea rows="5" cols="10" class="form-control char-text-area" id="bonds" placeholder="" name="bonds" required> 
+              </textarea>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="form-group">
+              <label>Flaws:</label>
+              <textarea rows="5" cols="10" class="form-control char-text-area" id="flaws" placeholder="" name="flaws" required> 
+              </textarea>
             </div>
           </div>
 
@@ -755,10 +834,9 @@ $(document).ready(function(){
     b=document.getElementById("initiative").value;
     c=document.getElementById("speed").value;
     d=document.getElementById("max-hp").value;
-    e=document.getElementById("hit-dice").value;
     f=document.getElementById("saving-throws").value;
 
-    if (a==null || a=="" || b==null || b=="" || c==null || c=="" || d==null || d=="" || e==null || e=="" || f==null || f=="") {
+    if (a==null || a=="" || b==null || b=="" || c==null || c=="" || d==null || d=="" || f==null || f=="") {
 
     $('#validation-1-alert').show ();
     $('#validation-1-span').text("Ensure all required fields are filled.");

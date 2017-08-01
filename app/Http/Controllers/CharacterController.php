@@ -129,6 +129,7 @@ class CharacterController extends Controller
         $printCharacterUserID = \DB::table('characters')->where('char_id', $char_print_id)->value('player_id');
         $pCUID = (int)$printCharacterUserID;
         $userID = Auth::user()->id;
+        $userName = Auth::user()->name;
         $character = \DB::table('characters')->where('char_id', $char_print_id)->first();
 
         if ($userID == $pCUID) {
@@ -138,8 +139,20 @@ class CharacterController extends Controller
             // Fill form with data array
             $pdf = new Pdf('/var/www/html/dnd-dashboard/dnd-dashboard/public/pdfs/form-fillable-char-sheet.pdf');
             $pdf->fillForm(array(
-                    'CharacterName'=>$character->character_name,
-                    
+                    'CharacterName'=>$character->character_name,       
+                    'ClassLevel'=>$character->Level,  
+                    'Background'=>$character->Background,   
+                    'PlayerName'=> $userName, 
+                    'Race'=>$character->Race, 
+                    'Alignment'=>$character->, 
+                    'XP'=>0, 
+                    'Prc'=>$character->Proficiency, 
+                    'PersonalityTraits'=>$character->personality_traits, 
+                    'Ideals'=>$character->ideals, 
+                    'Bonds'=>$character->bonds, 
+                    'Flaws'=>$character->flaws, 
+                    'STR'=>$character->Strength, 
+
                        ))
             ->needAppearances()
             ->send('Character Sheet - '.$character->character_name.'.pdf');
@@ -256,8 +269,12 @@ class CharacterController extends Controller
 
 		$new_character->Languages = request('languagesField');
 
+        $hitDie1 = request('hitDice1');
+        $hitDie2 = request('hitDice2');
 
-		$new_character->Hit_Die = 1;
+        $hitDice = ($hitDie1 . "d" . $hitDie2);
+
+		$new_character->Hit_Die = $hitDice;
 
 		$new_character->max_HP = request('max-hp');
 
@@ -270,6 +287,18 @@ class CharacterController extends Controller
         $new_character->Speed = request('speed');
 
         $new_character->Background = request('background');
+
+        $new_character->proficiencies = request('wep-tool-profs');
+
+        $new_character->features_traits = request('features-traits');
+
+        $new_character->personality_traits = request('personality-traits');
+
+        $new_character->ideals = request('ideals');
+
+        $new_character->bonds = request('bonds');
+
+        $new_character->flaws = request('flaws');
 
 
 
