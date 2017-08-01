@@ -144,7 +144,7 @@ class CharacterController extends Controller
                     'Background'=>$character->Background,   
                     'PlayerName'=> $userName, 
                     'Race'=>$character->Race, 
-                    'Alignment'=>$character->, 
+                    'Alignment'=>$character->Alignment, 
                     'XP'=>0, 
                     'Prc'=>$character->Proficiency, 
                     'PersonalityTraits'=>$character->personality_traits, 
